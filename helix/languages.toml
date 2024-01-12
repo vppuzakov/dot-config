@@ -4,7 +4,7 @@ command = "pylsp"
 
 [language-server.pylsp.config.pylsp.plugins]
 jedi_completion = { fuzzy = true, resolve_at_most = 10 }
-mypy = { enabled = true, dmypy = true, overrides = ["--config-file", "pyproject.toml"] }
+mypy = { enabled = true, dmypy = true}
 autopep8 = { enabled = false }
 preload = {enabled = false}
 mccabe = { enabled = false }
