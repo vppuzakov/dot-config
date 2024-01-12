@@ -1,0 +1,38 @@
+[language-server.pylsp]
+command = "pylsp"
+
+
+[language-server.pylsp.config.pylsp.plugins]
+jedi_completion = { fuzzy = true, resolve_at_most = 10 }
+mypy = { enabled = true, dmypy = true, overrides = ["--config-file", "pyproject.toml"] }
+autopep8 = { enabled = false }
+preload = {enabled = false}
+mccabe = { enabled = false }
+pycodestyle = { enabled = false }
+pylint =  { enabled = false }
+pyflakes = { enabled = false }
+yapf = { enabled = false }
+flake8 = { enabled = false }
+ruff = { enabled = false }
+
+
+[language-server.ruff-lsp]
+command = "ruff-lsp"
+ 
+
+[language-server.ruff-lsp.config.settings]
+args = ["--ignore", "E501", "--config", "ruff.toml"]
+
+
+[[language]]
+name = "python"
+scope ="source.python"
+auto-format = false
+rulers = [100]
+text-width = 99
+indent = { tab-width = 4, unit = "    " }
+roots = ["pyproject.toml", "setup.cfg", "ruff.toml", "pyrightconfig.json", "Poetry.lock"]
+language-servers = [
+    { name = "pylsp" },
+    { name = "ruff-lsp" },
+]

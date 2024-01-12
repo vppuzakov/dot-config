@@ -1,0 +1,31 @@
+# theme = "cyan_light"
+# theme = "noctis"
+# theme = "nightfox"
+# theme = "bogster_light"
+theme = "gruvboxmat"
+
+[editor]
+line-number = "relative"
+scroll-lines = 1
+scrolloff = 8
+true-color = true
+text-width = 99
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.lsp]
+display-messages = true
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+center = []
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+
+[editor.indent-guides]
+render = false
+character = "|"
